@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color=secondary>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="['/recipes']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+     <div>Retour</div> 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <a padding href="/home">Acceuil</a>
+        <a padding href="/contact">Contact</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col no-padding>
+        <ion-img id="small" [src]="loadedRecipe.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 text-center>{{ loadedRecipe.title }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+            <ion-item *ngFor="let ingt of loadedRecipe.ingredients">
+              {{ ingt }}
+            </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color=dark padding>
+        <ion-title text-center>© Copyright 2019</ion-title>
+        <div align="center">Master Geek</div>
+        <div align="center">-----------------x-----------------</div>
+      </ion-toolbar>
+  <!-- <ion-toolbar color='white'> -->
+      <!-- <ion-img src='assets/images/DelicateLogoV2.png'></ion-img> -->
+  <!-- </ion-toolbar> -->
+</ion-footer>

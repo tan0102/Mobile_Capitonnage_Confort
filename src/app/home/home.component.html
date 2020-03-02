@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar color=primary>
+      <ion-title>
+       <div>Acceuil</div> 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <a padding href="/contact">Contact</a>
+            <a padding href="/recipes">Modèles</a>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid padding>
+      <ion-row>
+        <ion-col>
+          <div text-center>Notre entreprise presente les modeles suivants pour vous informer la qualite de notre service et de notre production.</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+              <ion-item *ngFor="let recipe of recipes" [routerLink]=" ['/recipes' , recipe.id] ">
+                <ion-avatar slot="start">
+                  <ion-img [src]='recipe.imageUrl'></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  {{ recipe.title }}
+                </ion-label>
+              </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+  <ion-footer>
+      <ion-toolbar color=dark padding>
+          <ion-title text-center>© Copyright 2019</ion-title>
+          <div align="center">Master Geek</div>
+          <div align="center">-----------------x-----------------</div>
+        </ion-toolbar>
+    <!-- <ion-toolbar color='white'> -->
+        <!-- <ion-img src='assets/images/DelicateLogoV2.png'></ion-img> -->
+    <!-- </ion-toolbar> -->
+  </ion-footer>

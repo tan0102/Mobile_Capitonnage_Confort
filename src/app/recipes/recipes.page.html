@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color=primary>
+    <ion-title>Capitonnage Confort</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <a padding href="/home">Acceuil</a>
+        <a padding href="/contact">Contact</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item *ngFor="let recipe of recipes" [routerLink]=" ['/recipes' , recipe.id] ">
+      <ion-avatar slot="start">
+        <ion-img [src]='recipe.imageUrl'></ion-img>
+      </ion-avatar>
+      <ion-label>
+        {{ recipe.title }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color=dark padding>
+        <ion-title text-center>© Copyright 2019</ion-title>
+        <div align="center">Master Geek</div>
+        <div align="center">-----------------x-----------------</div>
+      </ion-toolbar>
+  <!-- <ion-toolbar color='white'> -->
+      <!-- <ion-img src='assets/images/DelicateLogoV2.png'></ion-img> -->
+  <!-- </ion-toolbar> -->
+</ion-footer>
+
+<!-- <ion-footer color=primary>
+  <ion-tabs>
+
+  </ion-tabs>
+  <ion-toolbar> -->
+      <!-- <ion-img width='100%' src='assets/images/DelicateLogoV2.png'></ion-img> -->
+      <!-- ionic cordova platform add browser
+           ionic cordova build browser --prod
+       -->
+  <!-- </ion-toolbar>
+</ion-footer> -->
